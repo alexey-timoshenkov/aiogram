@@ -5,8 +5,11 @@ app = Flask(__name__)
 @app.route("/")
 def index():
    c = 1
+   c += 1
+   c += 1
+   c += 5
    print(c)
    return render_template("index.html")
 
 if __name__ == "__main__":
-   app.run(debug=True)
+   app.run(debug=False)
