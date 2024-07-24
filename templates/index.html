@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <link type="text/css" href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
     <title>Title</title>
+<script>
+function clickButton()
+{
+    let promise = new Promise((resolve, reject) => {
+  setTimeout(() => reject(new Error("Ошибка!")), 1000);
+});
+
+// .catch(f) это то же самое, что promise.then(null, f)
+promise.catch(alert); // выведет "Error: Ошибка!" спустя одну секунду
+
+}
+</script>
+
 </head>
 <body>
 <h1>Web App</h1>
+<input onclick="clickButton()" type="button" value="Кнопка 2">
 </body>
 </html>
